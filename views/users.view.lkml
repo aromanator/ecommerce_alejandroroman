@@ -99,8 +99,22 @@ view: users {
     sql: ${TABLE}.zip ;;
   }
 
+  dimension: full_name {
+    type: string
+
+    sql: concat(${first_name}," ",${last_name}) ;;
+  }
+
+  dimension: lenght_full_name {
+    type: string
+        sql: length (${full_name}) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, first_name, last_name, orders.count]
   }
+
+
+
 }
