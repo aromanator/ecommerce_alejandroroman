@@ -75,6 +75,7 @@ view: order_items {
     type: sum
     value_format:"$#.00;($#.00)"
     sql: ${sale_price} ;;
+    hidden: yes
   }
 
 }
